@@ -48,3 +48,5 @@ Keymanager.AddKey('X', [](){std::cout << "Hi\n";}, Hold);
 
 Keymanager.RemoveKey('X');
 ```
+# Notes
+This lib uses raylib.h as its input tester. IF you do not have raylib you need to 1 hook the lib into your own tester functions
