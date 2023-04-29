@@ -1,5 +1,5 @@
 # DInputManager
-DInputManager is a small header and cpp file lib that is meant to make having keybored inputs easy
+DInputManager is a small header and cpp file lib that is meant to make having keyboard inputs easy
 # Docs
 To get started make a new instance of the KeyboardManager class like 
 ```cpp
