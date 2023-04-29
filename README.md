@@ -7,9 +7,9 @@ KeyboardManager Keymanager = KeyboardManager()
 ```   
 then register a key/mousebuton with there respective functions. AddKey, AddMouseButton  
 ```cpp
-KeyboardManager.AddKey('R', [](){std::cout<<"Hello World!\n";}, Press);
+Keymanager.AddKey('R', [](){std::cout<<"Hello World!\n";}, Press);
 
-KeyboardManager.AddMouseButton(0, [](){std::cout<<"Hello World!\n";}, Press);
+Keymanager.AddMouseButton(0, [](){std::cout<<"Hello World!\n";}, Press);
 ```
 This can be done with lambdas as shown above or with functions
 ```cpp
@@ -20,8 +20,8 @@ void Print()
 
 void main()
 {
-  KeyboardManager.AddKey('R', Print, Press);
-  KeyboardManager.AddMouseButton(0, Print, Press);
+  Keymanager.AddKey('R', Print, Press);
+  Keymanager.AddMouseButton(0, Print, Press);
 }
 ```
 These function pointers that are used above can also take in arguments
@@ -34,8 +34,8 @@ void Print(std::string S)
 
 void main()
 {
-  KeyboardManager.AddKey('R', Print, Press, "From Key R\n");
-  KeyboardManager.AddMouseButton(0, Print, Press, "From MouseButton 0!\n");
+  Keymanager.AddKey('R', Print, Press, "From Key R\n");
+  Keymanager.AddMouseButton(0, Print, Press, "From MouseButton 0!\n");
 }
 ```
 After you have registered all the functions call the Update method to check for inputs
