@@ -1,8 +1,6 @@
 #include "keyboardManager.h"
 #include "..\raylib.h"
-/*
-* This lib was made with raylib in mind but if you give it the input functions. IsMouseButtonPressed, IsMouseButtonDown, IsKeyPressed, IsKeyDown it will work with any lib
-*/
+
 void KeyboardManager::AddKey(int Key, std::function<void()> Function, Mode KeyMode)
 {
     auto WrapperFunc = [Function]() { Function(); };
@@ -10,6 +8,13 @@ void KeyboardManager::AddKey(int Key, std::function<void()> Function, Mode KeyMo
     KeyMapData Data = { false, KeyMode };
     _keyData.try_emplace(Key, Data);
     _keys.push_back(Key);
+}
+
+void KeyboardManager::RemoveKey(int Key)
+{
+    _keyData.erase(Key);
+    _keyFunctions.erase(Key);
+    std::remove(_keys.begin(), _keys.end(), Key);
 }
 
 
