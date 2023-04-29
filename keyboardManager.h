@@ -55,6 +55,9 @@ public:
 
     void AddMouseButton(int Key, std::function<void()> Function, Mode KeyMode);
 
+
+    void RemoveKey(int Key);
+
     void Update();
 private:
     std::map <int, std::function<void()>> _keyFunctions;
