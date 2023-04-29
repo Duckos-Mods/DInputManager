@@ -38,3 +38,13 @@ void main()
   KeyboardManager.AddMouseButton(0, Print, Press, "From MouseButton 0!\n");
 }
 ```
+After you have registered all the functions call the Update method to check for inputs
+```cpp
+Keymanager.Update();
+```
+To Remove a keybind call RemoveKey
+```cpp
+Keymanager.AddKey('X', [](){std::cout << "Hi\n";}, Hold);
+
+Keymanager.RemoveKey('X');
+```
